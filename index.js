@@ -57,7 +57,7 @@ const promptUser = () => {
         let createReadme = generateREADME(response);
         console.log(createReadme);
         writeFileAsync("README.md", createReadme).then(
-            err()
+            err => console.log("success!")
         )
     })
 }
@@ -65,13 +65,15 @@ const promptUser = () => {
 promptUser();
 
 function generateREADME(response){
-    let readMe =`#${response.title}
-    ######${response.description}
-    ######${response.license}
-    ######${response.gitHubName}
-    ######${response.email}
-    ######${response.contact}
-    ######${response.tableOfContents}`
+    let readMe =
+    `# ${response.title}
+      ** Description, Installation, Usage, Contributing, and Tests: ${response.description}** 
+     ** ${response.license} **
+     **http://github.come/joedip16[${response.gitHubName}](http://github.com)**
+     ** ${response.email} **
+     ** ${response.contact} **
+     ** ${response.tableOfContents} **
+    `
     return(readMe)
 }
 
