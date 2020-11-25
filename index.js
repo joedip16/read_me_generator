@@ -44,14 +44,7 @@ const promptUser = () => {
             ],
             name: "contact"
             },
-            {type: "list",
-            message: "Table of Contents",
-            choices:[
-                "Title", "Description, Installation, Usage, Contributing, and Tests", "License", "gitHubName", "Email", "Contact"
-            ],
-            name: "tableOfContents"
             
-            },
     ]).then (function(response){
         console.log(response);
         let createReadme = generateREADME(response);
@@ -67,13 +60,32 @@ promptUser();
 function generateREADME(response){
     let readMe =
     `# ${response.title}
-      ** Description, Installation, Usage, Contributing, and Tests: ${response.description}** 
-     ** ${response.license} **
-     **http://github.come/joedip16[${response.gitHubName}](http://github.com)**
-     ** ${response.email} **
-     ** ${response.contact} **
-     ** ${response.tableOfContents} **
-    `
+#-title
+
+**Description, Installation, Usage, Contributing, and Tests: ${response.description}**
+
+_${response.license}_
+
+[**${response.gitHubName}**](http://github.com/joedip16)
+
+*${response.email}*
+
+**${response.contact}**
+
+**Table of Contents**
+
+[Go to Title](#title)
+
+[description](READEME.md/description)
+
+[license](READEME.md/license)
+
+[gitHubName](READEME.md/githubname)
+
+[email](READEME.md/email)
+
+[contact](READEME.md/contact)
+`
     return(readMe)
 }
 
