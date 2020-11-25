@@ -14,7 +14,7 @@ const promptUser = () => {
             name: "title"
         },
             {type: "input",
-             message: "What is the project description, intallation instructions, usage information, contribution guildlines, and test instructions?",
+             message: "What is the project description, installation instructions, usage information, contribution guildlines, and test instructions?",
              name: "description",
         },
             {type: "list",
@@ -59,34 +59,40 @@ promptUser();
 
 function generateREADME(response){
     let readMe =
-    `# ${response.title}
-#-title
+`### **Table of Contents:**
+    
+[Go to Title](#title)
+    
+[Go to Description](#description)
+    
+[Go to License](#license)
+    
+[Go to GitHubName](#github)
+    
+[Go to Email](#email)
+    
+[Go to Contact](#contact)
 
-**Description, Installation, Usage, Contributing, and Tests: ${response.description}**
+# Title:
+# ${response.title}
 
+## Description:
+${response.description}
+
+## License:
 _${response.license}_
 
-[**${response.gitHubName}**](http://github.com/joedip16)
+## Github:
+[**${response.gitHubName}**](http://github.com/${response.gitHubName})
 
+## Email:
 *${response.email}*
 
-**${response.contact}**
+## Contact:
+${response.contact}
 
-**Table of Contents**
-
-[Go to Title](#title)
-
-[description](READEME.md/description)
-
-[license](READEME.md/license)
-
-[gitHubName](READEME.md/githubname)
-
-[email](READEME.md/email)
-
-[contact](READEME.md/contact)
+## Link:
+[Screen recording](https://drive.google.com/file/d/1h7HdjW6Uuaq9oOSgrP0KOpYiG-c8iUpu/view)
 `
     return(readMe)
 }
-
-//using input generate html file to string format
